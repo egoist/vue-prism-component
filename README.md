@@ -61,6 +61,8 @@ Or In JSX:
 You can also set the code using a prop:
 
 ```js
+import 'prismjs/components/prism-rust'
+
 <Prism language="rust" code={ myRustCode } />
 ```
 
