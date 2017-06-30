@@ -1,0 +1,42 @@
+{
+  "name": "vue-prism-component",
+  "version": "0.0.0",
+  "description": "vue component for prism.js",
+  "repository": {
+    "url": "egoist/vue-prism-component",
+    "type": "git"
+  },
+  "homepage": "https://egoistian.com/vue-prism-component/",
+  "main": "dist/vue-prism-component.common.js",
+  "cdn": "dist/vue-prism-component.min.js",
+  "unpkg": "dist/vue-prism-component.min.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo 'no tests!' && npm run lint",
+    "lint": "xo",
+    "prepublish": "npm run build",
+    "build": "npm run build:umd && npm run build:cjs && npm run build:compress",
+    "build:umd": "bili --format umd --env.NODE_ENV development --module-name PrismComponent",
+    "build:compress": "bili --format umd-compress --env.NODE_ENV production --module-name PrismComponent",
+    "build:cjs": "bili --format cjs"
+  },
+  "author": "egoist <0x142857@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "bili": "^0.16.0-rc.2",
+    "eslint-config-rem": "^3.0.0",
+    "poi": "^9.0.4",
+    "prismjs": "^1.6.0",
+    "xo": "^0.18.0"
+  },
+  "xo": {
+    "extends": "rem"
+  },
+  "poi": {
+    "entry": "example/index.js",
+    "dist": "example/dist"
+  }
+}
