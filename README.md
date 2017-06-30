@@ -8,6 +8,8 @@
 yarn add vue-prism-component
 ```
 
+CDN: [UNPKG](https://unpkg.com/vue-prism-component/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/vue-prism-component/dist/)
+
 ## Usage
 
 First you need to load `Prism` somewhere in your app:
