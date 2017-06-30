@@ -1,6 +1,6 @@
 {
   "name": "vue-prism-component",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "vue component for prism.js",
   "repository": {
     "url": "egoist/vue-prism-component",
@@ -34,8 +34,12 @@
   },
   "xo": {
     "extends": "rem/prettier",
-    "ignores": ["example/**"],
-    "globals": ["Prism"]
+    "ignores": [
+      "example/**"
+    ],
+    "globals": [
+      "Prism"
+    ]
   },
   "poi": {
     "entry": "example/index.js",
