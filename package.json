@@ -33,7 +33,9 @@
     "xo": "^0.18.0"
   },
   "xo": {
-    "extends": "rem"
+    "extends": "rem/prettier",
+    "ignores": ["example/**"],
+    "globals": ["Prism"]
   },
   "poi": {
     "entry": "example/index.js",
