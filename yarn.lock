@@ -802,9 +802,9 @@ big.js@^3.1.3:
   version "3.1.3"
   resolved "https://registry.npmjs.org/big.js/-/big.js-3.1.3.tgz#4cada2193652eb3ca9ec8e55c9015669c9806978"
 
-bili@^0.16.0-rc.2:
-  version "0.16.0-rc.2"
-  resolved "https://registry.npmjs.org/bili/-/bili-0.16.0-rc.2.tgz#dc75fcf7f9ed47488aa37afdce54fea221e102cd"
+bili@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.npmjs.org/bili/-/bili-0.16.0.tgz#cbb6d92eee3b2ed766ef018a33cc0f9739c4f4b1"
   dependencies:
     cac "^3.0.4"
     camelcase "^4.1.0"
