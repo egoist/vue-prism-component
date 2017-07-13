@@ -26,7 +26,7 @@ export default {
     return h(
       'pre',
       assign({}, ctx.data, {
-        class: [ctx.data.class, className],
+        class: [ctx.data.class, className]
       }),
       [
         h('code', {

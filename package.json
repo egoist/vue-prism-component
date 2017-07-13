@@ -38,7 +38,10 @@
     ],
     "globals": [
       "Prism"
-    ]
+    ],
+    "rules": {
+      "import/prefer-default-export": 0
+    }
   },
   "poi": {
     "entry": "example/index.js",
