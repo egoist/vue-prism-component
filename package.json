@@ -17,18 +17,17 @@
     "test": "echo 'no tests!' && npm run lint",
     "lint": "xo",
     "prepublish": "npm run build",
-    "build": "npm run build:umd && npm run build:cjs && npm run build:compress",
-    "build:umd": "bili --format umd --env.NODE_ENV development --module-name PrismComponent",
-    "build:compress": "bili --format umd-compress --env.NODE_ENV production --module-name PrismComponent",
+    "build": "npm run build:umd && npm run build:cjs",
+    "build:umd": "bili --format umd,umdCompress --env.NODE_ENV production --module-name PrismComponent",
     "build:cjs": "bili --format cjs"
   },
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "bili": "^0.16.0",
+    "bili": "^0.17.3",
     "eslint-config-rem": "^3.0.0",
-    "poi": "^9.0.4",
+    "poi": "^9.1.2",
     "prismjs": "^1.6.0",
     "xo": "^0.18.0"
   },

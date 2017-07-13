@@ -1,3 +1,5 @@
+import { assign } from './utils'
+
 export default {
   functional: true,
   props: {
@@ -23,9 +25,9 @@ export default {
 
     return h(
       'pre',
-      {
-        class: className
-      },
+      assign({}, ctx.data, {
+        class: [ctx.data.class, className],
+      }),
       [
         h('code', {
           class: className,
