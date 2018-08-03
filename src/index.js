@@ -6,6 +6,10 @@ export default {
     code: {
       type: String
     },
+    inline: {
+      type: Boolean,
+      default: false
+    },
     language: {
       type: String,
       default: 'markup'
@@ -13,6 +17,7 @@ export default {
   },
   render(h, ctx) {
     const code = ctx.props.code || ctx.children[0].text
+    const inline = ctx.props.inline;
     const language = ctx.props.language
     const prismLanguage = Prism.languages[language]
     const className = `language-${language}`
@@ -23,18 +28,25 @@ export default {
       )
     }
 
+    const codeElClasses = inline ? [ctx.data.class, className] : className;
+    const codeEl = h('code', {
+      class: codeElClasses,
+      domProps: {
+        innerHTML: Prism.highlight(code, prismLanguage)
+      }
+    })
+
+    if (inline) {
+      return codeEl;
+    }
+
     return h(
       'pre',
       assign({}, ctx.data, {
         class: [ctx.data.class, className]
       }),
       [
-        h('code', {
-          class: className,
-          domProps: {
-            innerHTML: Prism.highlight(code, prismLanguage)
-          }
-        })
+        codeEl
       ]
     )
   }

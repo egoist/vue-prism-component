@@ -60,6 +60,12 @@ Or In JSX:
 `}</Prism>
 ```
 
+For inline rendering, pass the `inline` prop:
+
+```js
+<Prism inline language="javascript" >alert("foo");</Prism>
+```
+
 You can also set the code using a prop:
 
 ```js
@@ -67,6 +73,7 @@ import 'prismjs/components/prism-rust'
 
 <Prism language="rust" code={ myRustCode } />
 ```
+
 
 ## Related
 
