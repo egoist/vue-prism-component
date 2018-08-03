@@ -74,7 +74,6 @@ import 'prismjs/components/prism-rust'
 <Prism language="rust" code={ myRustCode } />
 ```
 
-
 ## Related
 
 - [vue-highlight-component](https://github.com/egoist/vue-highlight-component): highlight code using highlight.js and vue component.
