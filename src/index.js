@@ -16,7 +16,7 @@ export default {
     }
   },
   render(h, ctx) {
-    const code = ctx.props.code || ctx.children[0].text
+    const code = ctx.props.code || ctx.children && ctx.children.length ? ctx.children[0].text : '';
     const inline = ctx.props.inline;
     const language = ctx.props.language
     const prismLanguage = Prism.languages[language]
