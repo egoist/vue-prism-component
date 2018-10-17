@@ -17,7 +17,7 @@ export default {
   },
   render(h, ctx) {
     const code =
-      ctx.props.code || (ctx.children && ctx.children.length)
+      ctx.props.code || (ctx.children && ctx.children.length > 0)
         ? ctx.children[0].text
         : ''
     const inline = ctx.props.inline
