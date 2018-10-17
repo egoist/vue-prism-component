@@ -16,8 +16,11 @@ export default {
     }
   },
   render(h, ctx) {
-    const code = ctx.props.code || ctx.children && ctx.children.length ? ctx.children[0].text : '';
-    const inline = ctx.props.inline;
+    const code =
+      ctx.props.code || (ctx.children && ctx.children.length)
+        ? ctx.children[0].text
+        : ''
+    const inline = ctx.props.inline
     const language = ctx.props.language
     const prismLanguage = Prism.languages[language]
     const className = `language-${language}`
@@ -28,7 +31,7 @@ export default {
       )
     }
 
-    const codeElClasses = inline ? [ctx.data.class, className] : className;
+    const codeElClasses = inline ? [ctx.data.class, className] : className
     const codeEl = h('code', {
       class: codeElClasses,
       domProps: {
@@ -37,7 +40,7 @@ export default {
     })
 
     if (inline) {
-      return codeEl;
+      return codeEl
     }
 
     return h(
@@ -45,9 +48,7 @@ export default {
       assign({}, ctx.data, {
         class: [ctx.data.class, className]
       }),
-      [
-        codeEl
-      ]
+      [codeEl]
     )
   }
 }
