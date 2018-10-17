@@ -31,16 +31,16 @@ export default {
       )
     }
 
-    const codeElClasses = inline ? [ctx.data.class, className] : className
-    const codeEl = h('code', {
-      class: codeElClasses,
-      domProps: {
-        innerHTML: Prism.highlight(code, prismLanguage)
-      }
-    })
-
     if (inline) {
-      return codeEl
+      return h(
+        'code',
+        assign({}, ctx.data, {
+          class: [ctx.data.class, className],
+          domProps: assign({}, ctx.data.domProps, {
+            innerHTML: Prism.highlight(code, prismLanguage)
+          })
+        })
+      )
     }
 
     return h(
@@ -48,7 +48,14 @@ export default {
       assign({}, ctx.data, {
         class: [ctx.data.class, className]
       }),
-      [codeEl]
+      [
+        h('code', {
+          class: className,
+          domProps: {
+            innerHTML: Prism.highlight(code, prismLanguage)
+          }
+        })
+      ]
     )
   }
 }
