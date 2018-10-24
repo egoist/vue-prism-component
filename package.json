@@ -1,6 +1,6 @@
 {
   "name": "vue-prism-component",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "vue component for prism.js",
   "repository": {
     "url": "egoist/vue-prism-component",
