@@ -14,9 +14,9 @@
     "dist"
   ],
   "scripts": {
-    "test": "npm run build",
+    "test": "echo skip",
     "lint": "xo",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "build": "npm run build:umd && npm run build:cjs",
     "build:umd": "bili --file-name \"vue-prism-component[min].js\" --format umd --format umd-min --env.NODE_ENV production --module-name PrismComponent --external prismjs",
     "build:cjs": "bili --file-name \"vue-prism-component.common.js\" --format cjs"

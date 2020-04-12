@@ -5,7 +5,7 @@ name: Release Package
 
 on:
   push:
-    branches: 
+    branches:
       - master
 
 jobs:
@@ -28,7 +28,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - run: yarn
       - run: yarn test
-      - run: npx semantic-release
+      - run: yarn global add semantic-release
+      - run: semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
