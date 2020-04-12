@@ -35,9 +35,6 @@
     "ignores": [
       "example/**"
     ],
-    "globals": [
-      "Prism"
-    ],
     "rules": {
       "import/prefer-default-export": 0
     }
