@@ -1,4 +1,4 @@
-import Prism from 'prismjs';
+import Prism from 'prismjs'
 import { assign } from './utils'
 
 export default {
