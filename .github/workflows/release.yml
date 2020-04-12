@@ -28,8 +28,7 @@ jobs:
             ${{ runner.os }}-yarn-
       - run: yarn
       - run: yarn test
-      - run: yarn global add semantic-release
-      - run: semantic-release
+      - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
