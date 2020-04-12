@@ -18,16 +18,15 @@
     "lint": "xo",
     "prepublish": "npm run build",
     "build": "npm run build:umd && npm run build:cjs",
-    "build:umd": "bili --format umd,umdCompress --env.NODE_ENV production --module-name PrismComponent",
-    "build:cjs": "bili --format cjs"
+    "build:umd": "bili --file-name \"vue-prism-component[min].js\" --format umd --format umd-min --env.NODE_ENV production --module-name PrismComponent --external prismjs",
+    "build:cjs": "bili --file-name \"vue-prism-component.common.js\" --format cjs"
   },
   "author": "egoist <0x142857@gmail.com>",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "bili": "^0.17.3",
+    "bili": "^4.9.0",
     "eslint-config-rem": "^3.0.0",
-    "poi": "^9.1.2",
     "prismjs": "^1.6.0",
     "xo": "^0.18.0"
   },
@@ -36,15 +35,8 @@
     "ignores": [
       "example/**"
     ],
-    "globals": [
-      "Prism"
-    ],
     "rules": {
       "import/prefer-default-export": 0
     }
-  },
-  "poi": {
-    "entry": "example/index.js",
-    "dist": "example/dist"
   }
 }
