@@ -1,6 +1,6 @@
 # vue-prism-component
 
-[![NPM version](https://img.shields.io/npm/v/vue-prism-component.svg?style=flat)](https://npmjs.com/package/vue-prism-component) [![NPM downloads](https://img.shields.io/npm/dm/vue-prism-component.svg?style=flat)](https://npmjs.com/package/vue-prism-component) [![CircleCI](https://circleci.com/gh/egoist/vue-prism-component/tree/master.svg?style=shield)](https://circleci.com/gh/egoist/vue-prism-component/tree/master)  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
+[![NPM version](https://img.shields.io/npm/v/vue-prism-component.svg?style=flat)](https://npmjs.com/package/vue-prism-component) [![NPM downloads](https://img.shields.io/npm/dm/vue-prism-component.svg?style=flat)](https://npmjs.com/package/vue-prism-component) [![Release Package](https://github.com/egoist/vue-prism-component/workflows/Release%20Package/badge.svg)](https://github.com/egoist/vue-prism-component/actions?query=workflow%3A%22Release+Package%22)  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/sponsors/egoist)
 
 ## Install
 
