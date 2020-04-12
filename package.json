@@ -14,7 +14,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "echo 'no tests!' && npm run lint",
+    "test": "npm run build",
     "lint": "xo",
     "prepublish": "npm run build",
     "build": "npm run build:umd && npm run build:cjs",
