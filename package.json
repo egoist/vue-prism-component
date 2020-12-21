@@ -18,7 +18,7 @@
     "lint": "xo",
     "prepublishOnly": "npm run build",
     "build": "npm run build:umd && npm run build:cjs",
-    "build:umd": "bili --file-name \"vue-prism-component[min].js\" --format umd --format umd-min --env.NODE_ENV production --module-name PrismComponent --external prismjs",
+    "build:umd": "bili --file-name \"vue-prism-component[min].js\" --format umd --format umd-min --env.NODE_ENV production --module-name PrismComponent --external prismjs --external vue",
     "build:cjs": "bili --file-name \"vue-prism-component.common.js\" --format cjs"
   },
   "author": "egoist <0x142857@gmail.com>",
@@ -28,6 +28,7 @@
     "bili": "^4.9.0",
     "eslint-config-rem": "^3.0.0",
     "prismjs": "^1.6.0",
+    "vue": "^3.0.4",
     "xo": "^0.18.0"
   },
   "xo": {
