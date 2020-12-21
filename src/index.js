@@ -15,9 +15,12 @@ export default defineComponent({
       default: 'markup'
     }
   },
-  setup(props, { slots }) {
-    const defaultSlot = slots.default()
-    const code = props.code || defaultSlot ? defaultSlot : ''
+  setup(props, { slots, attrs }) {
+    const defaultSlot = (slots && slots.default && slots.default()) || []
+    const code =
+      props.code || (defaultSlot && defaultSlot.length)
+        ? defaultSlot[0].children
+        : ''
     const inline = props.inline
     const language = props.language
     const prismLanguage = Prism.languages[language]
@@ -39,11 +42,13 @@ export default defineComponent({
       return h(
         'pre',
         {
-          class: [className]
+          ...attrs,
+          class: [attrs.class, className]
         },
         [
           h('code', {
-            class: className,
+            ...attrs,
+            class: [attrs.class, className],
             innerHTML: Prism.highlight(code, prismLanguage)
           })
         ]
