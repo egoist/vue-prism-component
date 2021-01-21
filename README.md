@@ -5,7 +5,11 @@
 ## Install
 
 ```bash
+# Vue 3
 yarn add vue-prism-component
+
+# Vue 2
+yarn add vue-prism-component@^1.2.0
 ```
 
 CDN: [UNPKG](https://unpkg.com/vue-prism-component/dist/) | [jsDelivr](https://cdn.jsdelivr.net/npm/vue-prism-component/dist/)
