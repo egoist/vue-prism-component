@@ -18,9 +18,8 @@ export default defineComponent({
   setup(props, { slots, attrs }) {
     const defaultSlot = (slots && slots.default && slots.default()) || []
     const code =
-      props.code || (defaultSlot && defaultSlot.length)
-        ? defaultSlot[0].children
-        : ''
+      props.code ||
+      (defaultSlot && defaultSlot.length ? defaultSlot[0].children : '')
     const inline = props.inline
     const language = props.language
     const prismLanguage = Prism.languages[language]
