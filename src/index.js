@@ -17,9 +17,14 @@ export default defineComponent({
   },
   setup(props, { slots, attrs }) {
     const defaultSlot = computed(() => (slots && slots.default && slots.default()) || []);
-    const code = computed(() => props.code || (defaultSlot.value && defaultSlot.value.length)
-      ? defaultSlot.value[0].children
-      : '');
+    const code = computed(() => {
+      return props.code
+      || (
+        defaultSlot.value && defaultSlot.value.length
+          ? defaultSlot.value[0].children
+          : ''
+      )
+    );
     const prismLanguage = computed(() => Prism.languages[props.language]);
     const className = computed(() => `language-${props.language}`);
 
