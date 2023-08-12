@@ -1,4 +1,4 @@
-import { h, defineComponent } from 'vue'
+import { h, defineComponent, computed } from 'vue'
 import Prism from 'prismjs'
 
 export default defineComponent({
@@ -16,26 +16,26 @@ export default defineComponent({
     }
   },
   setup(props, { slots, attrs }) {
-    const defaultSlot = (slots && slots.default && slots.default()) || []
-    const code =
-      props.code || (defaultSlot && defaultSlot.length)
-        ? defaultSlot[0].children
-        : ''
-    const inline = props.inline
-    const language = props.language
-    const prismLanguage = Prism.languages[language]
-    const className = `language-${language}`
+    const defaultSlot = computed(() => (slots && slots.default && slots.default()) || []);
+    const code = computed(() => props.code || (defaultSlot.value && defaultSlot.value.length)
+      ? defaultSlot.value[0].children
+      : '');
+    const prismLanguage = computed(() => Prism.languages[props.language]);
+    const className = computed(() => `language-${props.language}`);
 
     if (process.env.NODE_ENV === 'development' && !prismLanguage) {
       throw new Error(
         `Prism component for language "${language}" was not found, did you forget to register it? See all available ones: https://cdn.jsdelivr.net/npm/prismjs/components/`
       )
     }
+
+    const highlightedCode = computed(() => Prism.highlight(code.value, prismLanguage.value));
+
     return () => {
-      if (inline) {
+      if (props.inline) {
         return h('code', {
-          class: [className],
-          innerHTML: Prism.highlight(code, prismLanguage)
+          class: [className.value],
+          innerHTML: highlightedCode.value
         })
       }
 
@@ -43,13 +43,13 @@ export default defineComponent({
         'pre',
         {
           ...attrs,
-          class: [attrs.class, className]
+          class: [attrs.class, className.value]
         },
         [
           h('code', {
             ...attrs,
-            class: [attrs.class, className],
-            innerHTML: Prism.highlight(code, prismLanguage)
+            class: [attrs.class, className.value],
+            innerHTML: highlightedCode.value
           })
         ]
       )
